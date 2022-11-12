@@ -1,8 +1,8 @@
-﻿using ManageTools.Data;
+﻿using AdvancedReport_V1.Data;
 using System.Collections.Generic;
-using Products = ManageTools.Data.RawProductData;
+using Products = AdvancedReport_V1.Data.RawProductData;
 
-namespace ManageTools.Store
+namespace AdvancedReport_V1.Store
 {
     class RawProductStore : IStore<RawProductStore.Key, RawProductData>
     {

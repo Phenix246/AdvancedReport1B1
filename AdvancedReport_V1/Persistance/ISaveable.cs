@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManageTools.Persistance
+namespace AdvancedReport_V1.Persistance
 {
     interface ISaveable
     {

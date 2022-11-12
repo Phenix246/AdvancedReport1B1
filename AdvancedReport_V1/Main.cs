@@ -1,14 +1,16 @@
-﻿using ManageTools.Data;
-using ManageTools.Store;
+﻿using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Store;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ManageTools
+namespace AdvancedReport_V1
 {
     public class Main : ModMeta
     {
-        public override string Name => Helpers.TrainerVersion;
+        public override string Name => Helpers.AdvancedReportName;
+
+        // Asd
 
         public override void Initialize(ModController.DLLMod parentMod)
         {

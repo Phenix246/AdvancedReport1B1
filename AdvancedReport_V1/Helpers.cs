@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManageTools
+namespace AdvancedReport_V1
 {
     public static class Helpers
     {
         public static GameSettings Settings => GameSettings.Instance;
         public static bool IsGameLoaded => GameSettings.Instance != null && HUD.Instance != null;
         public static string Version => "0.0.1";
-        public static string TrainerVersion => $"Manage Tools v{Version}";
+        public static string AdvancedReportName => $"Advanced report v{Version}";
         public static bool IsDebug => false;
 
         public static List<SimulatedCompany> getSubsidiaries()

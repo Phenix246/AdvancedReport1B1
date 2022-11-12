@@ -1,13 +1,8 @@
-﻿using ManageTools.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdvancedReport_V1.Data;
 
-namespace ManageTools.Store
+namespace AdvancedReport_V1.Store
 {
-    interface IStore<K, T> where T : MonthData
+    public interface IStore<K, T> where T : MonthData
     {
         public K store(T data);
 

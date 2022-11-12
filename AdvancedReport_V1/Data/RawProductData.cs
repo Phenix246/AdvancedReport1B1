@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManageTools.Data
+namespace AdvancedReport_V1.Data
 {
 
     class RawProductData : MonthData
@@ -24,8 +24,16 @@ namespace ManageTools.Data
         public int UnitSaleOnline { get; private set; }
         public int UnitSaleOffline { get; private set; }
 
+        public int Refunds { get; private set; }
+        public int Userbase { get; private set; }
+        public uint Followers { get; private set; }
+        public float Reputation { get; private set; }
+        public float Awareness { get; private set; }
+
+        public List<uint> OSs { get; private set; }
+
         public RawProductData(SDateTime month, uint companyId, string companyName, uint productId, string productName, float price, uint unitSum, uint refundSum, float loss, float[] lossBreakdown,
-            float incomeWithLicence, float incomeWithoutLicence, int unitSaleOnline, int unitSaleOffline)
+            float incomeWithLicence, float incomeWithoutLicence, int unitSaleOnline, int unitSaleOffline, int refunds, int userbase, uint followers, float reputation, float awareness, List<uint> oss)
         {
             Month = month;
             CompanyId = companyId;
@@ -41,6 +49,12 @@ namespace ManageTools.Data
             IncomeWithoutLicence = incomeWithoutLicence;
             UnitSaleOnline = unitSaleOnline;
             UnitSaleOffline = unitSaleOffline;
+            Refunds = refunds;
+            Userbase = userbase;
+            Followers = followers;
+            Reputation = reputation;
+            Awareness = awareness;
+            OSs = oss;
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using ManageTools.Data;
-using ManageTools.Persistance;
+﻿using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Persistance;
 using System;
 using System.Collections.Generic;
 
-namespace ManageTools.Store
+namespace AdvancedReport_V1.Store
 {
     class StoreManager : ISaveable
     {

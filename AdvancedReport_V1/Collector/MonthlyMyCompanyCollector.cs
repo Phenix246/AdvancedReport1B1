@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManageTools.Collector
+namespace AdvancedReport_V1.Collector
 {
     class MonthlyMyCompanyCollector : IDataCollector
     {

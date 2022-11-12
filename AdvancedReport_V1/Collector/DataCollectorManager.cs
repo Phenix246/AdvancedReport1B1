@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ManageTools;
+using AdvancedReport_V1;
 
-namespace ManageTools.Collector
+namespace AdvancedReport_V1.Collector
 {
     class DataCollectorManager
     {
         private List<IDataCollector> dataCollectors = new List<IDataCollector>();
 
-        public DataCollectorManager Instance { get; } = new DataCollectorManager();
+        public static DataCollectorManager Instance { get; } = new DataCollectorManager();
 
         private DataCollectorManager()
         {
@@ -21,12 +21,10 @@ namespace ManageTools.Collector
         void init()
         {
             dataCollectors.Add(new MonthlyBillCollector());
-            TimeOfDay.OnMonthPassed += onMonthPassed;
         }
 
-        void onMonthPassed(object? sender, EventArgs e)
+        public void onMonthPassed(SDateTime month)
         {
-            var month = TimeOfDay.Instance.GetDate().SimplifyMore();
             foreach(var collector in dataCollectors)
             {
                 collector.collectData(month);

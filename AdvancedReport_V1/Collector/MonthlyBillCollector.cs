@@ -1,8 +1,8 @@
-﻿using ManageTools.Data;
-using ManageTools.Store;
+﻿using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Store;
 using System;
 
-namespace ManageTools.Collector
+namespace AdvancedReport_V1.Collector
 {
     class MonthlyBillCollector : IDataCollector
     {

@@ -1,9 +1,9 @@
-﻿using ManageTools.Data;
+﻿using AdvancedReport_V1.Data;
 using System.Collections.Generic;
 using Bills = System.Collections.Generic.Dictionary<Company.TransactionCategory, System.Collections.Generic.Dictionary<string, float>>;
 using Key = SDateTime;
 
-namespace ManageTools.Store
+namespace AdvancedReport_V1.Store
 {
     class RawBillsStore : IStore<Key, RawBillsData>
     {

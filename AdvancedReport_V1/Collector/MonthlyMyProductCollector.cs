@@ -1,9 +1,9 @@
 ﻿using System;
-using ManageTools.Builder;
-using ManageTools.Data;
-using ManageTools.Store;
+using AdvancedReport_V1.Builder;
+using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Store;
 
-namespace ManageTools.Collector
+namespace AdvancedReport_V1.Collector
 {
     class MonthlyMyProductCollector : IDataCollector
     {

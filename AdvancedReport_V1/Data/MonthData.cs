@@ -1,7 +1,7 @@
 ﻿
-namespace ManageTools.Data
+namespace AdvancedReport_V1.Data
 {
-    class MonthData
+    public class MonthData
     {
         public SDateTime Month { get; protected set; }
     }

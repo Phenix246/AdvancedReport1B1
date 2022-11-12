@@ -1,16 +1,16 @@
-﻿using ManageTools.Data;
-using ManageTools.Store;
+﻿using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Store;
 
 
-namespace ManageTools.Collector
+namespace AdvancedReport_V1.Collector
 {
     interface IDataCollector
     {
         void collectData(SDateTime month);
 
-        public IStore<T> getStore<T>() where T : MonthData
+        public IStore<K,T> getStore<K, T>() where T : MonthData
         {
-            return StoreManager.Instance.get<T>();
+            return StoreManager.Instance.get<K, T>();
         }
 
     }

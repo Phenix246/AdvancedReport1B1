@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ManageTools
+namespace AdvancedReport_V1.UI
 {
 	public static class Utilities
 	{
