@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace AdvancedReport_V1.Store
 {
-    class StoreManager : ISaveable
+    class StoreManager
     {
         public static StoreManager Instance { get; } = new StoreManager();
 
@@ -18,8 +18,7 @@ namespace AdvancedReport_V1.Store
 
         private void init()
         {
-            register(RawBillsStore.Instance);
-            register(RawProductStore.Instance);
+            register(BalanceSheetStore.Instance);
         }
 
         private void register<K, T>(IStore<K, T> store) where T : MonthData
@@ -35,12 +34,14 @@ namespace AdvancedReport_V1.Store
 
         public WriteDictionary Serialize(GameReader.LoadMode mode)
         {
-            throw new NotImplementedException();
+            var data = new WriteDictionary();
+            data["store"] = stores;
+            return data;
         }
 
         public void Deserialize(WriteDictionary data, GameReader.LoadMode mode)
         {
-            throw new NotImplementedException();
+            stores = (Dictionary<Type, object>)data["store"];
         }
     }
 }

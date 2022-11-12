@@ -32,5 +32,17 @@ namespace AdvancedReport_V1
         {
             return Settings.MyCompany;
         }
+
+        public static SDateTime getPreviousMonth(SDateTime month)
+        {
+            var newMonth = month.Month - 1;
+            var newYear = month.Year;
+            if (newMonth == 0)
+            {
+                newMonth = 12;
+                newYear -= 1;
+            }
+            return new SDateTime(newMonth, newYear);
+        }
     }
 }

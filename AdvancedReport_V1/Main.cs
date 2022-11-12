@@ -1,5 +1,4 @@
-﻿using AdvancedReport_V1.Data;
-using AdvancedReport_V1.Store;
+﻿using AdvancedReport_V1.Store;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,7 +37,6 @@ namespace AdvancedReport_V1
         public override void Deserialize(WriteDictionary data, GameReader.LoadMode mode)
         {
             StoreManager.Instance.Deserialize(data.Get("Store", new WriteDictionary()), mode);
-            SDateTime yearMonth = new SDateTime(TimeOfDay.Instance.Month, TimeOfDay.Instance.Year);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AdvancedReport_V1.Persistance;
+﻿using AdvancedReport_V1.Data;
+using AdvancedReport_V1.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace AdvancedReport_V1.Documents
 {
-    public class BalanceSheet
+    public class BalanceSheet : MonthData
     {
-        public SDateTime Month { get; private set; }
-
         // Assets
         public float Cash { get; private set; }
         public float Plot { get; private set; }
