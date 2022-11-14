@@ -4,10 +4,14 @@ namespace AdvancedReport_V1.Store
 {
     public interface IStore<K, T> where T : MonthData
     {
-        public K Store(T data);
+        K Store(T data);
 
-        public T Get(K month);
+        T Get(K month);
 
-        public T GetOrDefault(K month, T value);
+        T GetOrDefault(K month, T value);
+
+        void Deserialize(WriteDictionary data, GameReader.LoadMode mode);
+
+        WriteDictionary Serialize(GameReader.LoadMode mode);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace AdvancedReport_V1.UI
 {
-	public static class Utilities
+	public static class UiUtilities
 	{
 		public static void AddButton(string text, UnityAction action, List<GameObject> buttons)
 		{

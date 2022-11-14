@@ -31,8 +31,42 @@ namespace AdvancedReport_V1.Store
 
         public SDateTime Store(BalanceSheet balanceSheet)
         {
-            balanceSheets.Add(balanceSheet.Month, balanceSheet);
+            balanceSheets[balanceSheet.Month] = balanceSheet;
             return balanceSheet.Month;
+        }
+
+        public void Deserialize(WriteDictionary data, GameReader.LoadMode mode)
+        {
+            Logger.Log("BalanceSheetStore:Deserialize : Start", false);
+            var balanceSheetsData = data.Get("balanceSheets", new WriteDictionary());
+            var balanceSheets = new Dictionary<SDateTime, BalanceSheet>();
+            foreach (var balanceSheetData in balanceSheetsData)
+            {
+                var balanceSheet = new BalanceSheet((WriteDictionary)balanceSheetData.Value, mode);
+                balanceSheets.Add(balanceSheet.Month, balanceSheet);
+            }
+            this.balanceSheets = balanceSheets;
+            Logger.Log("BalanceSheetStore:Deserialize : Stop", false);
+        }
+
+        public WriteDictionary Serialize(GameReader.LoadMode mode)
+        {
+            Logger.Log("BalanceSheetStore:Serialize : Start", false);
+            var savedData = new WriteDictionary();
+
+            var balanceSheetsData = new WriteDictionary();
+
+            foreach(var balanceSheet in balanceSheets)
+            {
+                var serValue = balanceSheet.Value.Serialize(mode);
+                var serKey = balanceSheet.Key.ToString();
+                balanceSheetsData[serKey] = serValue;
+            }
+
+            savedData["balanceSheets"] = balanceSheetsData;
+
+            Logger.Log("BalanceSheetStore:Serialize : End", false);
+            return savedData;
         }
     }
 }

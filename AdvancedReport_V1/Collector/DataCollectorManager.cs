@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdvancedReport_V1;
+
 
 namespace AdvancedReport_V1.Collector
 {
-    class DataCollectorManager
+    public class DataCollectorManager
     {
         private List<IDataCollector> dataCollectors = new List<IDataCollector>();
 
-        public static DataCollectorManager Instance { get; } = new DataCollectorManager();
+        public static readonly DataCollectorManager Instance = new DataCollectorManager();
 
         private DataCollectorManager()
         {
@@ -20,7 +17,7 @@ namespace AdvancedReport_V1.Collector
 
         void init()
         {
-            dataCollectors.Add(new MonthlyBillCollector());
+            dataCollectors.Add(new MyBalanceSheetCollector());
         }
 
         public void onMonthPassed(SDateTime month)
